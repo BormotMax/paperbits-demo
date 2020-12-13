@@ -154,7 +154,7 @@ $carousel-indicator-active-bg: #fff;
     margin-left: $carousel-control-width;
     list-style: none;
 
-    li {
+    .carousel-indicator {
         box-sizing: content-box;
         flex: 0 1 auto;
         width: $carousel-indicator-size;

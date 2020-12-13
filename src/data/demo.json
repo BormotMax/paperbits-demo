@@ -20515,10 +20515,6 @@
                     "carouselItems": [
                         {
                             "type": "carousel-item",
-                            "nodes": []
-                        },
-                        {
-                            "type": "carousel-item",
                             "nodes": [
                                 {
                                     "type": "grid",
@@ -21002,6 +20998,10 @@
                                     }
                                 }
                             ]
+                        },
+                        {
+                            "type": "carousel-item",
+                            "nodes": []
                         }
                     ]
                 },
