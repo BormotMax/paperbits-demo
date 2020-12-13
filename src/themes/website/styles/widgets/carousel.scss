@@ -22,6 +22,7 @@ $carousel-indicator-active-bg: #fff;
 
 .carousel {
     //  position: relative;
+    min-height: 500px;
 }
 
 .carousel.pointer-event {
@@ -42,13 +43,15 @@ $carousel-indicator-active-bg: #fff;
     width: 100%;
     margin-right: -100%;
     backface-visibility: hidden;
+    flex-direction: column;
     // @include transition($carousel-transition);
 }
 
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
-    display: block;
+    display: flex;
+    flex: 1;
 }
 
 .carousel-item-next:not(.carousel-item-left),
