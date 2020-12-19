@@ -7,28 +7,34 @@ $carousel-indicator-spacer: 20px;
 $carousel-indicator-active-bg: #fff;
 
 .carousel {
-    //  position: relative;
-    min-height: 500px;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 .carousel.pointer-event {
     touch-action: pan-y;
 }
 
-.carousel-item {
+.showroom {
+    display: flex;
     position: relative;
-    display: none;
-    float: left;
-    width: 100%;
-    margin-right: -100%;
-    backface-visibility: hidden;
-    flex-direction: column;
-    // @include transition($carousel-transition);
+    left: calc(-100% * var(--slide));
+}
 
-    & > div {
-        @extend .fit;
-        overflow: hidden;
-    }
+.carousel-item {
+    display: flex;
+    // position: relative;
+    // display: none;
+    // float: left;
+    // width: 100%;
+    // margin-right: -100%;
+    // backface-visibility: hidden;
+    // flex-direction: column;
+    // // @include transition($carousel-transition);
+
+
+    min-width: 100%;
 }
 
 .carousel-item.active,
