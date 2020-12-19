@@ -45,6 +45,11 @@ $carousel-indicator-active-bg: #fff;
     backface-visibility: hidden;
     flex-direction: column;
     // @include transition($carousel-transition);
+
+    & > div {
+        @extend .fit;
+        overflow: hidden;
+    }
 }
 
 .carousel-item.active,
@@ -156,6 +161,7 @@ $carousel-indicator-active-bg: #fff;
     margin-right: $carousel-control-width;
     margin-left: $carousel-control-width;
     list-style: none;
+    pointer-events: none;
 
     .carousel-indicator {
         box-sizing: content-box;
