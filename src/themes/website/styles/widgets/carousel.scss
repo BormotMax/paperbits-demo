@@ -7,7 +7,7 @@ $carousel-indicator-spacer: 20px;
 $carousel-indicator-active-bg: #fff;
 
 .carousel {
-    display: block;
+    display: flex;
     position: relative;
     overflow: hidden;
 }
@@ -16,25 +16,17 @@ $carousel-indicator-active-bg: #fff;
     touch-action: pan-y;
 }
 
-.showroom {
+.carousel-items {
     display: flex;
     position: relative;
-    left: calc(-100% * var(--slide));
-}
+    // left: calc(-100% * var(--slide));
+    transform: translateX(calc(-100% * var(--slide)));
+    width: 100%;
 
-.carousel-item {
-    display: flex;
-    // position: relative;
-    // display: none;
-    // float: left;
-    // width: 100%;
-    // margin-right: -100%;
-    // backface-visibility: hidden;
-    // flex-direction: column;
-    // // @include transition($carousel-transition);
-
-
-    min-width: 100%;
+    .carousel-item {
+        display: flex;
+        min-width: 100%;
+    }
 }
 
 .carousel-item.active,
@@ -69,15 +61,6 @@ $carousel-indicator-active-bg: #fff;
     opacity: $carousel-control-opacity;
     background: none;
     border: none;
-    // @include transition($carousel-control-transition);
-
-    // Hover/focus state
-    // @include hover-focus() {
-    //     color: $carousel-control-color;
-    //     text-decoration: none;
-    //     outline: 0;
-    //     opacity: $carousel-control-hover-opacity;
-    // }
 }
 .carousel-control-prev {
     left: 20px;
@@ -107,7 +90,6 @@ $carousel-indicator-active-bg: #fff;
     display: flex;
     justify-content: center;
     padding-left: 0; // override <ol> default
-    // Use the .carousel-control's width as margin so we don't overlay those
     margin-right: $carousel-control-width;
     margin-left: $carousel-control-width;
     list-style: none;
@@ -127,10 +109,10 @@ $carousel-indicator-active-bg: #fff;
         opacity: 0.5;
         border: 2px solid #cccccc85;
         border-radius: $carousel-indicator-size;
-    }
 
-    .active {
-        opacity: 1;
-        background-color: #cccccc85;
+        &.active {
+            opacity: 1;
+            background-color: #cccccc85;
+        }
     }
 }
